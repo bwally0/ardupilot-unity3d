@@ -84,6 +84,7 @@ class JsonPhysicsBackend:
             if dt >= self.last_timestamp:  # monotonic progression
                 self.last_timestamp = dt
                 return dt
+
         # Fallback monotonic since start
         dt = time.perf_counter() - self.start_time_monotonic
         if dt < self.last_timestamp:
